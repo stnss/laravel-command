@@ -1,0 +1,48 @@
+<?php
+
+namespace {{ namespace }};
+
+use {{ rootNamespace }}Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use Illuminate\Contracts\View\View;
+
+use {{ namespacedModel }};
+use {{ namespacedRequest }};
+
+class {{ class }} extends Controller
+{
+    public function index(): View
+    {
+        //
+    }
+    
+    public function create(): View
+    {
+        //
+    }
+
+    public function store({{ request }} ${{ requestVariable }})
+    {
+        //
+    }
+
+    public function show({{ model }} ${{ modelVariable }})
+    {
+        //
+    }
+
+    public function edit({{ model }} ${{ modelVariable }})
+    {
+        //
+    }
+    
+    public function update({{ request }} ${{ requestVariable }}, {{ model }} ${{ modelVariable }})
+    {
+        //
+    }
+
+    public function destroy({{ model }} ${{ modelVariable }})
+    {
+        //
+    }
+}
