@@ -1,0 +1,26 @@
+{
+    "name": "sirio/laravel-command",
+    "description": "This package for generating custom Views, Controllers, Models, Request and etc.",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Sirio\\LaravelCommand\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Sutan Syahdinullah",
+            "email": "ssyahdinullahs@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Sirio\\LaravelCommand\\App\\Providers\\SirioCommandServiceProvide"
+            ]
+        }
+    }
+}
