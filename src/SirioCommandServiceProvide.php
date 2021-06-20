@@ -1,6 +1,6 @@
 <?php
 
-namespace Sirio\LaravelCommand\App\Providers;
+namespace Sirio\LaravelCommand;
 
 use Illuminate\Support\ServiceProvider;
 use Sirio\LaravelCommand\App\Console\Commands\ControllerSirioCommand;
