@@ -4,6 +4,8 @@ namespace Sirio\LaravelCommand;
 
 use Illuminate\Support\ServiceProvider;
 use Sirio\LaravelCommand\Console\Commands\ControllerCreateCommand;
+use Sirio\LaravelCommand\Console\Commands\ModelCreateCommand;
+use Sirio\LaravelCommand\Console\Commands\RequestCreateCommand;
 use Sirio\LaravelCommand\Console\Commands\ViewCreateCommand;
 
 class SirioCommandServiceProvider extends ServiceProvider {
@@ -12,6 +14,8 @@ class SirioCommandServiceProvider extends ServiceProvider {
             $this->commands([
                 ControllerCreateCommand::class,
                 ViewCreateCommand::class,
+                RequestCreateCommand::class,
+                ModelCreateCommand::class,
             ]);
         }
     }

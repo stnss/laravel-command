@@ -3,8 +3,6 @@
 namespace Sirio\LaravelCommand\Console\Commands;
 
 use Illuminate\Console\GeneratorCommand;
-use InvalidArgumentException;
-use Illuminate\Support\Str;
 
 class ViewCreateCommand extends GeneratorCommand
 {
