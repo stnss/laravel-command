@@ -3,7 +3,6 @@
 namespace {{ namespace }};
 
 use {{ rootNamespace }}Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use Illuminate\Contracts\View\View;
 
 use {{ namespacedModel }};
@@ -22,7 +21,7 @@ class {{ class }} extends Controller
         return view('{{ view }}.{{ viewVariable }}.create');
     }
 
-    public function store({{ request }} ${{ requestVariable }})
+    public function store({{ request }} $request)
     {
         {{ model }}::create($request->validated());
 
@@ -41,7 +40,7 @@ class {{ class }} extends Controller
         return view('{{ view }}.{{ viewVariable }}.edit', compact('{{ modelVariable }}'));
     }
     
-    public function update({{ request }} ${{ requestVariable }}, {{ model }} ${{ modelVariable }})
+    public function update({{ request }} $request, {{ model }} ${{ modelVariable }})
     {
         ${{ modelVariable }}->update($request->validated());
 
