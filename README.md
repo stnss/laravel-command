@@ -1,7 +1,10 @@
-# Laravel File Generator
+# Laravel Create Command
+[![Packagist License](https://img.shields.io/github/license/stnss/laravel-command)](http://choosealicense.com/licenses/mit/)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/sirio/laravel-command.svg)](https://packagist.org/packages/sirio/laravel-command)
+[![Total Downloads](https://img.shields.io/packagist/dt/sirio/laravel-command.svg)](https://packagist.org/packages/sirio/laravel-command)
 
-This is package to integrate [Laravel File Generator](https://sirio.co.id) with [Laravel](https://laravel.com/).
-It includes a ServiceProvider to register the generator.
+This is package to integrate [Laravel Create Command](https://github.com/stnss/laravel-command) with [Laravel](https://laravel.com/).
+It includes a ServiceProvider to register the command.
 
 ## Installation
 Require this package using composer.
@@ -13,6 +16,6 @@ Optional: The service provider will automatically get registered. Or you may man
 ```php
 'providers' => [
     // ...
-    Sirio\LaravelCommand\App\Providers\SirioCommandServiceProvide::class,
+    Sirio\LaravelCommand\SirioCommandServiceProvide::class,
 ];
 ```

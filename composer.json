@@ -8,6 +8,11 @@
             "Sirio\\LaravelCommand\\": "src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Sirio\\LaravelCommand\\Tests\\": "tests"
+        }
+    },
     "authors": [
         {
             "name": "Sutan Syahdinullah",
@@ -19,7 +24,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Sirio\\LaravelCommand\\App\\Providers\\SirioCommandServiceProvide"
+                "Sirio\\LaravelCommand\\SirioCommandServiceProvider"
             ]
         }
     }
