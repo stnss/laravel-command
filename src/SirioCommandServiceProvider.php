@@ -3,8 +3,8 @@
 namespace Sirio\LaravelCommand;
 
 use Illuminate\Support\ServiceProvider;
-use Sirio\LaravelCommand\App\Console\Commands\ControllerCreateCommand;
-use Sirio\LaravelCommand\App\Console\Commands\ViewCreateCommand;
+use Sirio\LaravelCommand\Console\Commands\ControllerCreateCommand;
+use Sirio\LaravelCommand\Console\Commands\ViewCreateCommand;
 
 class SirioCommandServiceProvider extends ServiceProvider {
     public function boot() {
