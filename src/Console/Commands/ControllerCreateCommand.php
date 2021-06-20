@@ -67,7 +67,7 @@ class ControllerCreateCommand extends GeneratorCommand
                 $requestClass = $this->parseRequest($this->getNameRequest($this->argument('name'), $prefixRequest));
                 if (!class_exists($requestClass)) {
                     if ($this->confirm("A {$requestClass} Request does not exist. Do you want to generate it?", true)) {
-                        $this->call('make:request', ['name' => $requestClass]);
+                        $this->call('create:request', ['name' => $requestClass]);
                     }
                 }
 
@@ -90,7 +90,7 @@ class ControllerCreateCommand extends GeneratorCommand
 
         if (!class_exists($requestClass)) {
             if ($this->confirm("A {$requestClass} Request does not exist. Do you want to generate it?", true)) {
-                $this->call('make:request', ['name' => $requestClass]);
+                $this->call('create:request', ['name' => $requestClass]);
             }
         }
 
@@ -110,7 +110,10 @@ class ControllerCreateCommand extends GeneratorCommand
         
         if (! class_exists($modelClass)) {
             if ($this->confirm("A {$modelClass} model does not exist. Do you want to generate it?", true)) {
-                $this->call('make:model', ['name' => $modelClass, '-m' => true]);
+                $this->call('create:model', [
+                    'name' => $modelClass, 
+                    // '-m' => true
+                ]);
             }
         }
 

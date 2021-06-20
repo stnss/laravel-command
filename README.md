@@ -1,7 +1,7 @@
 # Laravel Create Command
-[![Packagist License](https://img.shields.io/github/license/stnss/laravel-command)](http://choosealicense.com/licenses/mit/)
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/sirio/laravel-command.svg)](https://packagist.org/packages/sirio/laravel-command)
-[![Total Downloads](https://img.shields.io/packagist/dt/sirio/laravel-command.svg)](https://packagist.org/packages/sirio/laravel-command)
+[![License](http://poser.pugx.org/sirio/laravel-command/license)](https://packagist.org/packages/sirio/laravel-command)
+[![Version](http://poser.pugx.org/sirio/laravel-command/version)](https://packagist.org/packages/sirio/laravel-command)
+[![Total Downloads](http://poser.pugx.org/sirio/laravel-command/downloads)](https://packagist.org/packages/sirio/laravel-command)
 
 This is package to integrate [Laravel Create Command](https://github.com/stnss/laravel-command) with [Laravel](https://laravel.com/).
 It includes a ServiceProvider to register the command.
