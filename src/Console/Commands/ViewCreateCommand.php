@@ -1,6 +1,6 @@
 <?php
 
-namespace Sirio\LaravelCommand\App\Console\Commands;
+namespace Sirio\LaravelCommand\Console\Commands;
 
 use Illuminate\Console\GeneratorCommand;
 use InvalidArgumentException;
@@ -32,7 +32,7 @@ class ViewCreateCommand extends GeneratorCommand
     }
 
     protected function getStub() {
-        $stub = '/../../../stubs/view.stub';
+        $stub = '/../stubs/view.stub';
 
         return file_exists($customPath = $this->laravel->basePath(trim($stub, '/')))
             ? $customPath

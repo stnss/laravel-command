@@ -1,6 +1,6 @@
 <?php
 
-namespace Sirio\LaravelCommand\App\Console\Commands;
+namespace Sirio\LaravelCommand\Console\Commands;
 
 use Illuminate\Console\GeneratorCommand;
 use InvalidArgumentException;
@@ -19,10 +19,10 @@ class ControllerCreateCommand extends GeneratorCommand
 
     protected function getStub()
     {
-        $stub = '/../../../stubs/controller.single.request.stub';
+        $stub = '/../stubs/controller.single.request.stub';
 
         if ($this->isSeparate) {
-            $stub = '/../../../stubs/controller.full.request.stub';
+            $stub = '/../stubs/controller.full.request.stub';
         }
 
         return $this->resolveStubPath($stub);
@@ -47,8 +47,8 @@ class ControllerCreateCommand extends GeneratorCommand
         $replace = [];
 
         $replace = $this->buildViewReplacements($replace);
-        $replace = $this->buildRequestReplacements($replace);
         $replace = $this->buildModelReplacements($replace);
+        $replace = $this->buildRequestReplacements($replace);
 
         $replace["use {$controllerNamespace}\Controller;\n"] = '';
 
@@ -65,7 +65,6 @@ class ControllerCreateCommand extends GeneratorCommand
             foreach (['Store', 'Update'] as $prefixRequest) {
 
                 $requestClass = $this->parseRequest($this->getNameRequest($this->argument('name'), $prefixRequest));
-
                 if (!class_exists($requestClass)) {
                     if ($this->confirm("A {$requestClass} Request does not exist. Do you want to generate it?", true)) {
                         $this->call('make:request', ['name' => $requestClass]);
@@ -108,8 +107,8 @@ class ControllerCreateCommand extends GeneratorCommand
     protected function buildModelReplacements(array $replace): array
     {
         $modelClass = $this->parseModel($this->argument('name'));
-
-        if (!class_exists($modelClass)) {
+        
+        if (! class_exists($modelClass)) {
             if ($this->confirm("A {$modelClass} model does not exist. Do you want to generate it?", true)) {
                 $this->call('make:model', ['name' => $modelClass, '-m' => true]);
             }
@@ -177,11 +176,7 @@ class ControllerCreateCommand extends GeneratorCommand
             return $nameRequest;
         }
 
-        if (!is_dir(app_path('Http/Requests'))) {
-            $this->makeDirectory(app_path('Http/Requests'));
-        }
-
-        return $rootNamespace . 'Requests\\' . $nameRequest;
+        return $rootNamespace.'Requests\\'.$nameRequest;
     }
 
     protected function parseModel($model)
@@ -205,11 +200,7 @@ class ControllerCreateCommand extends GeneratorCommand
             return $model;
         }
 
-        if (!is_dir(app_path('Models'))) {
-            $this->makeDirectory(app_path('Models'));
-        }
-
-        return $rootNamespace . 'Models\\' . $model;
+        return $rootNamespace.'Models\\'.$model;
     }
 
     protected function getNameInput()
@@ -221,6 +212,10 @@ class ControllerCreateCommand extends GeneratorCommand
     {
         if ($prefix === "") {
             return trim($name) . "Request";
+        }
+
+        if(!strrpos($name, '/')) {
+            return "{$prefix}{$name}Request";
         }
 
         $path = substr($name, 0, strrpos($name, '/'));
